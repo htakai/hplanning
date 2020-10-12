@@ -1,0 +1,417 @@
+
+/* ---------------
+   全体のレイアウト
+----------------*/
+.h-container,
+.wrapper,
+.f-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width:599px) {
+  .h-container,
+  .wrapper,
+  .f-container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width:959px) {
+  /*横に並べる*/
+  .wrapper {
+    display: flex;
+  }
+  .s-container {
+    flex: 0 0 300px;
+    order: 2;
+  }
+  .m-container {
+    flex: 1 1 auto;
+    order: 1;
+  }
+}
+
+/* パディングの設定 */
+.h-container,
+.m-container,
+.s-container,
+.f-container {
+  padding: 0 2%;
+}
+
+
+/* -------------
+   共通のスタイル
+---------------*/
+
+/* フォントサイズ設定 */
+body {
+  color: #444;
+  font-size: 15px; /* 全体の文字サイズ */
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;  /*フォント種類*/
+  line-height: 2;     /*行間*/
+}
+@media screen and (min-width:959px) {
+  .h-container,
+  .m-container,
+  .f-container {
+    font-size: 1.2em;
+  }
+}
+
+/* link a */
+a {
+    font-weight: bold;/*太字*/
+}
+a:hover {
+  color: #ffa500;
+  text-decoration: none;
+  font-weight: bold;/*太字*/
+}
+
+
+/* -------------
+   背景色・背景画像
+---------------*/
+
+/* ボックスの背景設定 */
+body {
+  background-color: #cfc
+}
+
+.f-container {
+  background-image: url(../img/bg-fooder.png);
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+
+/* -------------
+   ヘッダー
+---------------*/
+#site-intro {
+  line-height: 1;
+}
+
+/* .site-branding */
+.site-branding {
+  position: relative;
+}
+.title-logo {
+  width: 37%;
+}
+.title-logo img {
+  border-radius: 30%;
+}
+.site-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  line-height: 1;
+  position: absolute;
+  top: 30px;
+  left: 35%;
+}
+.site-title a {
+  text-decoration: none;
+  color: #000;
+}
+.addr {
+  margin-left: 5%;
+}
+@media screen and (min-width:599px) {
+  .site-title {
+    font-size: 2.2em;
+    left: 150px;
+  }
+}
+
+/* h-nav */
+#h-nav {
+  list-style-type: none;
+}
+#h-nav a {
+  display: block;
+}
+@media screen and (min-width:599px) {
+  #h-nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  #h-nav li {
+    width: 150px;
+  }
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  margin-left: -30px;
+}
+.breadcrumb li {
+  display: inline;/*横に並ぶように*/
+  list-style: none;
+}
+.breadcrumb li:after {/* >を表示*/
+  content: '>';
+  padding: 0 0.2em;
+  color: #555;
+}
+.breadcrumb li:last-child:after {
+  content: '';
+}
+
+/* 見出し１ */
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding: 4%;
+  background: -webkit-radial-gradient(60px 50px, 40px 40px, white, #007b00);
+  background: radial-gradient(circle 40px at 60px 50px, white, #007b00);
+}
+h1::after {
+  content: url(../img/hati_s.png);
+}
+@media screen and (min-width:599px) {
+  h1 {
+    font-size: 2em;
+    background: -webkit-radial-gradient(100px 50px, 80px 80px, white, #007b00);
+    background: radial-gradient(circle 100px at 80px 50px, white, #007b00);
+  }
+  h1::after {
+  content: url(../img/hati.png);
+  }
+}
+
+
+/* -------------
+   メインコンテンツ
+---------------*/
+.m-container h2 {
+  margin-bottom: 30px;
+}
+.m-container h2:before {
+  content: url(../img/icon.png);
+}
+/* article */
+.arti {
+  margin: 30px 0;
+}
+.arti h3 {
+  margin-left: 2%;
+}
+.img-wide {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+.arti .text {
+  margin: 1% 3%;
+}
+
+/* balloon */
+.balloon2 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #FFF;
+  border: solid 3px #555;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.balloon2:before {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  margin-left: -15px;
+  border: 12px solid transparent;
+  border-top: 12px solid #FFF;
+  z-index: 2;
+}
+.balloon2:after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -17px;
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+  z-index: 1;
+}
+.balloon2 p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* -------------
+   サイドコンテンツ
+---------------*/
+.s-container {
+  margin-bottom: 80px;
+}
+
+.s-container h2:before {
+  content: url(../img/icon.png);
+}
+
+#profile img {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 200px;
+}
+
+/* snsボタン共通 */
+.snsbtn li a {
+  font-family: 'Verdana',sans-serif;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center;
+  transition: .4s;
+  text-decoration: none;
+}
+.snsbtn li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Twitter */
+.fl_tw2 {
+  border: solid 1px #55acee;
+  color: #55acee;
+}
+/* Twitterマウスホバー時 */
+.fl_tw2:hover {
+  border: solid 1px #55acee;
+  background: #55acee;
+}
+/* Instagram */
+.insta_btn2 {
+  border: solid 1px #c6529a;
+  color: #c6529a;
+}
+/* Instagramマウスホバー時 */
+.insta_btn2:hover {
+  border: solid 1px #c6529a;
+  background: #c6529a;
+}
+/* Facebook */
+.fl_fb2 {
+  border: solid 1px #3b5998;
+  color: #3b5998;
+}
+/* Facebookマウスホバー時 */
+.fl_fb2:hover {
+  border: solid 1px #3b5998;
+  background: #3b5998;
+}
+/* Feedly */
+.fl_fd2 {
+  border: solid 1px #6cc655;
+  color: #6cc655;
+}
+/* Feedlyマウスホバー時 */
+.fl_fd2:hover {
+  border: solid 1px #6cc655;
+  background: #6cc655;
+}
+/* Pocket */
+.fl_pk2 {
+  border: solid 1px #ef3f56;
+  color: #ef3f56;
+}
+/* Pocketマウスホバー時 */
+.fl_pk2:hover {
+  border: solid 1px #ef3f56;
+  background: #ef3f56;
+}
+/* はてブ */
+.fl_hb2 {
+  border: solid 1px #1ba5dc;
+  color: #1ba5dc;
+}
+/* はてブマウスホバー時 */
+.fl_hb2:hover {
+  border: solid 1px #1ba5dc;
+  background: #1ba5dc;
+}
+/* YouTube */
+.fl_yu2 {
+  border: solid 1px #fc0d1c;
+  color: #fc0d1c;
+}
+/* YouTubeマウスホバー時 */
+.fl_yu2:hover {
+  border: solid 1px #fc0d1c;
+  background: #fc0d1c;
+}
+/* LINE */
+.fl_li2 {
+  border: solid 1px #00c300;
+  color: #00c300;
+}
+/* LINEマウスホバー時 */
+.fl_li2:hover {
+  border: solid 1px #00c300;
+  background: #00c300;
+}
+/* メールアイコン */
+.fl_ma2 {
+  border: solid 1px #f3981d;
+  color: #f3981d;
+}
+/* メールアイコンマウスホバー時 */
+.fl_ma2:hover {
+  border: solid 1px #f3981d;
+  background: #f3981d;
+}
+
+
+/* -------------
+   フッターコンテンツ
+---------------*/
+.f-container {
+  margin-top: 50px;
+}
+
+/* fnav */
+/* .f-container h2::before { */
+  /* content: ""; */
+/* } */
+.fnav {
+  margin: 0 auto;
+  padding-left: 20px;
+}
+.fnav a:hover {
+  color: #fff;
+}
+@media screen and (min-width:599px) {
+  .fnav {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+  }
+}
+
+/* .copyright_etc */
+.copyright_etc {
+  text-align: right;
+}
+.copyright_etc a {
+  color: #000;
+}
+small {
+  display: block;
+  font-weight: bold;
+}
